@@ -10,10 +10,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    - name: Restore cache
+      uses: actions/cache@v3
+      with:
+        path: cache.txt
+        key: cache-txt
     - name: Simulate build
       run: |
         ls -l
         echo "Building poc2repoA..."
         cat repoA.txt || true
+        echo "Workflow run: ${{ github.run_id }}" >> cache.txt
+        cat cache.txt
         sleep 5
         echo "Build complete."
