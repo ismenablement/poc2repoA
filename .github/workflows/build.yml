@@ -24,3 +24,10 @@ jobs:
         cat cache.txt
         sleep 5
         echo "Build complete."
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: |
+          cache.txt
+          repoA.txt
