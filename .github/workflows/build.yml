@@ -10,13 +10,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        repository: amisovic/poc2repoA
     - name: Restore cache
       uses: actions/cache@v4
       with:
         path: cache.txt
-        key: cache-txt-${{ github.run_id }}
+        key: cache-txt-poc2repoA-${{ github.run_id }}
         restore-keys: |
-          cache-txt-
+          cache-txt-poc2repoA-
     - name: Simulate build
       run: |
         ls -l
