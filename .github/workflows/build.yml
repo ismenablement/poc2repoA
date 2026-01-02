@@ -22,7 +22,7 @@ jobs:
         ls -l
         echo "Building poc2repoA..."
         cat repoA.txt || true
-        echo "Workflow run: ${{ github.run_id }}" >> cache.txt
+        echo "Workflow run: ${{ github.run_number }} - ${{ github.run_id }}" >> cache.txt
         cat cache.txt
         sleep 5
         echo "Build complete."
