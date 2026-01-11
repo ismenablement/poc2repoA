@@ -1,6 +1,6 @@
 name: Build
 
-run-name: Build poc2repoA on ${{ inputs.branch }}
+run-name: Build ${{ inputs.branch }}
 
 on:
   workflow_call:
