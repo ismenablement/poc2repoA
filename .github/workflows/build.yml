@@ -11,7 +11,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        repository: amisovic/poc2repoA
+        repository: ismenenablement/poc2repoA
     - name: Restore cache
       uses: actions/cache@v4
       with:
