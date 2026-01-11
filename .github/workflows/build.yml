@@ -1,7 +1,14 @@
 name: Build
 
+run-name: Build poc2repoA on ${{ inputs.branch }}
+
 on:
   workflow_call:
+    inputs:
+      branch:
+        description: 'Branch to checkout and build'
+        required: true
+        type: string
   workflow_dispatch:
 
 jobs:
@@ -12,6 +19,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: ismenablement/poc2repoA
+        ref: ${{ inputs.branch }}
     - name: Restore cache
       uses: actions/cache@v4
       with:
