@@ -10,6 +10,12 @@ on:
         required: true
         type: string
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to checkout and build'
+        required: false
+        default: 'main'
+        type: string
 
 jobs:
   build:
